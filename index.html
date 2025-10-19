@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tayeeb Tahir Buchh - Software Developer & ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes glow {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(236, 72, 153, 0.8);
+            }
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        .gradient-animate {
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #667eea 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 8s ease infinite;
+        }
+        
+        .card-3d {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-3d:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(168, 85, 247, 0.5);
+        }
+        
+        .bg-mesh {
+            background-color: #0f0f1e;
+            background-image: radial-gradient(at 47% 33%, hsl(262, 71%, 25%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(318, 71%, 25%) 0, transparent 55%);
+        }
+        
+        .neon-border {
+            border: 2px solid transparent;
+            background: linear-gradient(#0f0f1e, #0f0f1e) padding-box, linear-gradient(135deg, #667eea, #764ba2, #f093fb) border-box;
+        }
+        
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.6);
+        }
+    </style>
+</head>
+
+<body class="bg-mesh text-white overflow-x-hidden">
+    <!-- Floating Background Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
+        <div class="absolute top-40 right-10 w-96 h-96 bg-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="text-2xl font-black gradient-text">TTB</div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-semibold relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-semibold relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#skills" class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-semibold relative group">
+                        Skills
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#projects" class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-semibold relative group">
+                        Projects
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="px-6 py-2 gradient-animate text-white rounded-full font-bold hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                        Contact
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-lg border-t border-purple-500/20">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="#home" class="block px-4 py-3 hover:bg-purple-900/50 rounded-lg transition-all">Home</a>
+                <a href="#about" class="block px-4 py-3 hover:bg-purple-900/50 rounded-lg transition-all">About</a>
+                <a href="#skills" class="block px-4 py-3 hover:bg-purple-900/50 rounded-lg transition-all">Skills</a>
+                <a href="#projects" class="block px-4 py-3 hover:bg-purple-900/50 rounded-lg transition-all">Projects</a>
+                <a href="#contact" class="block px-4 py-3 hover:bg-purple-900/50 rounded-lg transition-all">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center px-4 pt-20">
+        <div class="text-center max-w-5xl mx-auto relative z-10">
+            <div class="mb-10 animate-fadeInUp">
+                <div class="w-40 h-40 mx-auto mb-8 rounded-full gradient-animate flex items-center justify-center text-7xl font-black shadow-2xl animate-glow">
+                    TB
+                </div>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 animate-fadeInUp" style="animation-delay: 0.2s;">
+                <span class="gradient-text">Tayeeb Tahir Buchh</span>
+            </h1>
+            <div class="mb-6 animate-fadeInUp" style="animation-delay: 0.4s;">
+                <h2 class="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">
+                    Software Developer
+                </h2>
+                <h3 class="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                    Machine Learning Engineer
+                </h3>
+            </div>
+            <p class="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto animate-fadeInUp" style="animation-delay: 0.6s;">
+                Crafting intelligent systems and building scalable applications with cutting-edge technology
+            </p>
+            <p class="text-lg text-purple-300 mb-12 animate-fadeInUp" style="animation-delay: 0.8s;">
+                🎓 BCA Graduate | Currently Pursuing MCA
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 animate-fadeInUp" style="animation-delay: 1s;">
+                <a href="#projects" class="group relative px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <span class="relative z-10">View My Work</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+                <a href="#contact" class="px-10 py-4 border-2 border-purple-500 rounded-full font-bold text-lg hover:bg-purple-500/20 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    Let's Connect
+                </a>
+            </div>
+            <div class="mt-16 animate-float">
+                <svg class="mx-auto w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-32 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl md:text-7xl font-black text-center mb-16 gradient-text">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                        👋 Hey! I'm <span class="text-purple-400 font-bold">Tayeeb Tahir Buchh</span>, a passionate developer who loves turning complex problems into elegant solutions. With a solid foundation from my BCA and currently pursuing MCA, I'm
+                        on a mission to build intelligent systems that make a real impact.
+                    </p>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                        🚀 From detecting credit card fraud with ML algorithms to building full-stack web applications, I thrive at the intersection of AI and software engineering. My expertise spans <span class="text-pink-400 font-semibold">Java, Python, Spring Boot</span>,
+                        and modern ML frameworks.
+                    </p>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                        💡 What drives me? The thrill of solving challenging problems, the satisfaction of clean code, and the endless possibilities of technology. Let's build something amazing together!
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="neon-border p-8 rounded-2xl card-3d bg-gradient-to-br from-purple-900/40 to-transparent backdrop-blur-sm">
+                        <div class="text-5xl mb-4">💻</div>
+                        <h3 class="text-xl font-bold mb-2 text-purple-300">Full Stack Dev</h3>
+                        <p class="text-sm text-gray-400">Building end-to-end solutions</p>
+                    </div>
+                    <div class="neon-border p-8 rounded-2xl card-3d bg-gradient-to-br from-pink-900/40 to-transparent backdrop-blur-sm">
+                        <div class="text-5xl mb-4">🤖</div>
+                        <h3 class="text-xl font-bold mb-2 text-pink-300">ML & AI</h3>
+                        <p class="text-sm text-gray-400">Intelligent predictive systems</p>
+                    </div>
+                    <div class="neon-border p-8 rounded-2xl card-3d bg-gradient-to-br from-blue-900/40 to-transparent backdrop-blur-sm">
+                        <div class="text-5xl mb-4">🗄️</div>
+                        <h3 class="text-xl font-bold mb-2 text-blue-300">Data Engineering</h3>
+                        <p class="text-sm text-gray-400">Database design & optimization</p>
+                    </div>
+                    <div class="neon-border p-8 rounded-2xl card-3d bg-gradient-to-br from-green-900/40 to-transparent backdrop-blur-sm">
+                        <div class="text-5xl mb-4">📚</div>
+                        <h3 class="text-xl font-bold mb-2 text-green-300">Education</h3>
+                        <p class="text-sm text-gray-400">BCA | Pursuing MCA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="relative py-32 px-4 bg-black/30">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl md:text-7xl font-black text-center mb-6 gradient-text">Tech Arsenal</h2>
+            <p class="text-center text-gray-400 text-xl mb-16">Technologies I work with daily</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Programming & Backend -->
+                <div class="neon-border p-8 rounded-2xl card-3d bg-gradient-to-br from-purple-900/30 to-transparent backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">⚙️</div>
+                        <h3 class="text-2xl font-bold text-purple-300">Backend & Programming</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag px-4 py-2 bg-purple-500/20 rounded-full text-sm border border-purple-500/40 font-semibold">Java</span>
+                        <span class="skill-tag px-4 py-2 bg-purple-500/20 rounded-full text-sm border border-purple-500/40 font-semibold">Python</span>
+                        <span class="skill-tag px-4 py-2 bg-purple-500/20 rounded-full text-sm border border-purple-500/40 font-semibold">PHP</span>
+                        <span class="skill-tag px-4 py-2 bg-purple-500/20 rounded-full text-sm border border-purple-500/40 font-semibold">Spring Boot</span>
+                    </div>
+                </div>
+
+                <!-- DSA -->
+                <div class="neon-border p-8 rounded-2xl card-3d bg-gradient-to-br from-pink-900/30 to-transparent backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">🧩</div>
+                        <h3 class="text-2xl font-bold text-pink-300">DSA & Design</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag px-4 py-2 bg-pink-500/20 rounded-full text-sm border border-pink-500/40 font-semibold">Data Structures</span>
+                        <span class="skill-tag px-4 py-2 bg-pink-500/20 rounded-full text-sm border border-pink-500/40 font-semibold">Algorithms</span>
+                        <span class="skill-tag px-4 py-2 bg-pink-500/20 rounded-full text-sm border border-pink-500/40 font-semibold">System Design</span>
+                    </div>
+                </div>
+
+                <!-- ML & AI -->
+                <div class="neon-border p-8 rounded-2xl card-3d bg-gradient-to-br from-blue-900/30 to-transparent backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">🧠</div>
+                        <h3 class="text-2xl font-bold text-blue-300">ML & AI</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag px-4 py-2 bg-blue-500/20 rounded-full text-sm border border-blue-500/40 font-semibold">Scikit-learn</span>
+                        <span class="skill-tag px-4 py-2 bg-blue-500/20 rounded-full text-sm border border-blue-500/40 font-semibold">TensorFlow</span>
+                        <span class="skill-tag px-4 py-2 bg-blue-500/20 rounded-full text-sm border border-blue-500/40 font-semibold">Pandas</span>
+                        <span class="skill-tag px-4 py-2 bg-blue-500/20 rounded-full text-sm border border-blue-500/40 font-semibold">NumPy</span>
+                        <span class="skill-tag px-4 py-2 bg-blue-500/20 rounded-full text-sm border border-blue-500/40 font-semibold">Matplotlib</span>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="neon-border p-8 rounded-2xl card-3d bg-gradient-to-br from-green-900/30 to-transparent backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">🎨</div>
+                        <h3 class="text-2xl font-bold text-green-300">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag px-4 py-2 bg-green-500/20 rounded-full text-sm border border-green-500/40 font-semibold">HTML5</span>
+                        <span class="skill-tag px-4 py-2 bg-green-500/20 rounded-full text-sm border border-green-500/40 font-semibold">CSS3</span>
+                        <span class="skill-tag px-4 py-2 bg-green-500/20 rounded-full text-sm border border-green-500/40 font-semibold">JavaScript</span>
+                        <span class="skill-tag px-4 py-2 bg-green-500/20 rounded-full text-sm border border-green-500/40 font-semibold">Responsive Design</span>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="neon-border p-8 rounded-2xl card-3d bg-gradient-to-br from-yellow-900/30 to-transparent backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">💾</div>
+                        <h3 class="text-2xl font-bold text-yellow-300">Database</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag px-4 py-2 bg-yellow-500/20 rounded-full text-sm border border-yellow-500/40 font-semibold">MySQL</span>
+                        <span class="skill-tag px-4 py-2 bg-yellow-500/20 rounded-full text-sm border border-yellow-500/40 font-semibold">Database Design</span>
+                        <span class="skill-tag px-4 py-2 bg-yellow-500/20 rounded-full text-sm border border-yellow-500/40 font-semibold">SQL Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="relative py-32 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl md:text-7xl font-black text-center mb-6 gradient-text">Featured Projects</h2>
+            <p class="text-center text-gray-400 text-xl mb-16">Some things I've built recently</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Credit Card Fraud Detection -->
+                <div class="neon-border rounded-2xl overflow-hidden card-3d bg-gradient-to-br from-gray-900 to-purple-900/40 backdrop-blur-sm">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-sm font-bold">ML/AI</span>
+                            <a href="https://github.com/TayeebTahirBuchh" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 transition-all duration-300 hover:scale-110">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Credit Card Fraud Detection</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Built an ML model to detect fraudulent transactions using advanced classification algorithms. Achieved high accuracy in identifying anomalous patterns.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-500/10 rounded-lg text-xs text-purple-300 border border-purple-500/20">Python</span>
+                            <span class="px-3 py-1 bg-purple-500/10 rounded-lg text-xs text-purple-300 border border-purple-500/20">Scikit-learn</span>
+                            <span class="px-3 py-1 bg-purple-500/10 rounded-lg text-xs text-purple-300 border border-purple-500/20">Pandas</span>
+                            <span class="px-3 py-1 bg-purple-500/10 rounded-lg text-xs text-purple-300 border border-purple-500/20">NumPy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Movie Prediction System -->
+                <div class="neon-border rounded-2xl overflow-hidden card-3d bg-gradient-to-br from-gray-900 to-pink-900/40 backdrop-blur-sm">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="px-4 py-2 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full text-sm font-bold">ML/AI</span>
+                            <a href="https://github.com/TayeebTahirBuchh" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300 transition-all duration-300 hover:scale-110">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Movie Prediction System</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Intelligent recommendation system using collaborative filtering and content-based algorithms for personalized movie suggestions.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-pink-500/10 rounded-lg text-xs text-pink-300 border border-pink-500/20">Python</span>
+                            <span class="px-3 py-1 bg-pink-500/10 rounded-lg text-xs text-pink-300 border border-pink-500/20">Scikit-learn</span>
+                            <span class="px-3 py-1 bg-pink-500/10 rounded-lg text-xs text-pink-300 border border-pink-500/20">Matplotlib</span>
+                            <span class="px-3 py-1 bg-pink-500/10 rounded-lg text-xs text-pink-300 border border-pink-500/20">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Examiner Appointment System -->
+                <div class="neon-border rounded-2xl overflow-hidden card-3d bg-gradient-to-br from-gray-900 to-blue-900/40 backdrop-blur-sm">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full text-sm font-bold">Full Stack</span>
+                            <a href="https://github.com/TayeebTahirBuchh" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-all duration-300 hover:scale-110">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Examiner Appointment System</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Full-stack web application for managing examiner appointments with authentication, scheduling, and admin dashboard.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-500/10 rounded-lg text-xs text-blue-300 border border-blue-500/20">HTML5</span>
+                            <span class="px-3 py-1 bg-blue-500/10 rounded-lg text-xs text-blue-300 border border-blue-500/20">CSS3</span>
+                            <span class="px-3 py-1 bg-blue-500/10 rounded-lg text-xs text-blue-300 border border-blue-500/20">JavaScript</span>
+                            <span class="px-3 py-1 bg-blue-500/10 rounded-lg text-xs text-blue-300 border border-blue-500/20">PHP</span>
+                            <span class="px-3 py-1 bg-blue-500/10 rounded-lg text-xs text-blue-300 border border-blue-500/20">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-32 px-4 bg-black/30">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-5xl md:text-7xl font-black mb-6 gradient-text">Let's Build Something Amazing</h2>
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                Have a project in mind? Want to collaborate? Or just want to say hi? I'd love to hear from you!
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 mb-16">
+                <a href="mailto:tayeebtahirbuchh@gmail.com" class="group relative px-10 py-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span class="relative z-10">Email Me</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+                <a href="https://github.com/TayeebTahirBuchh" target="_blank" rel="noopener noreferrer" class="px-10 py-5 bg-gray-800 hover:bg-gray-700 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                    </svg> GitHub
+                </a>
+                <a href="https://linkedin.com/in/tayeebtahirbuchh" target="_blank" rel="noopener noreferrer" class="px-10 py-5 bg-blue-600 hover:bg-blue-700 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                    </svg> LinkedIn
+                </a>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="neon-border p-6 rounded-xl bg-gradient-to-br from-purple-900/30 to-transparent backdrop-blur-sm">
+                    <div class="text-3xl md:text-4xl font-black gradient-text mb-2">3+</div>
+                    <div class="text-gray-400 text-sm">Projects</div>
+                </div>
+                <div class="neon-border p-6 rounded-xl bg-gradient-to-br from-pink-900/30 to-transparent backdrop-blur-sm">
+                    <div class="text-3xl md:text-4xl font-black gradient-text mb-2">10+</div>
+                    <div class="text-gray-400 text-sm">Technologies</div>
+                </div>
+                <div class="neon-border p-6 rounded-xl bg-gradient-to-br from-blue-900/30 to-transparent backdrop-blur-sm">
+                    <div class="text-3xl md:text-4xl font-black gradient-text mb-2">2+</div>
+                    <div class="text-gray-400 text-sm">Years Learning</div>
+                </div>
+                <div class="neon-border p-6 rounded-xl bg-gradient-to-br from-green-900/30 to-transparent backdrop-blur-sm">
+                    <div class="text-3xl md:text-4xl font-black gradient-text mb-2">∞</div>
+                    <div class="text-gray-400 text-sm">Passion</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-12 px-4 border-t border-purple-500/20">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-gray-400 text-lg mb-4">
+                Designed & Built by <span class="text-purple-400 font-bold">Tayeeb Tahir Buchh</span>
+            </p>
+            <p class="text-gray-500 text-sm">
+                &copy; 2025 All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-gray-900/90', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-gray-900/90', 'shadow-lg');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all section elements
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.8s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
