@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#fffdf8">
+<title>Tayeeb Tahir Buchh | Developer from Srinagar</title>
+<meta name="description" content="Tayeeb Tahir Buchh is an MCA student in Srinagar who builds web apps, data projects and machine learning experiments.">
+<meta property="og:title" content="Tayeeb Tahir Buchh | Developer from Srinagar">
+<meta property="og:description" content="Web apps, data projects and machine learning experiments from Srinagar, Jammu and Kashmir.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--ink:#1c2340;--mute:#576079;--bg:#fffdf8;
+--mint:#c8f1e0;--lav:#dcd6ff;--peach:#ffd9c4;--sun:#fff0a6;--sky:#cde7ff;--rose:#ffd1e3;
+--mintd:#1f8f6b;--lavd:#5b4fd6;--peachd:#d4602a;--skyd:#2a6fc2;--rosed:#c93c7b;
+--display:'Bricolage Grotesque',Arial,sans-serif;--body:'Figtree',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.7 var(--body);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--lavd);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.03em}
+header{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);pointer-events:none}
+header .wrap{display:flex;justify-content:space-between;align-items:center;margin-top:.8rem;background:rgba(255,253,248,.88);backdrop-filter:blur(12px);border:2px solid var(--ink);border-radius:99px;padding:.45rem .5rem .45rem 1.2rem;pointer-events:auto}
+.brand{font:800 1.05rem var(--display)}
+nav{display:flex;gap:.2rem;align-items:center;font-size:.92rem;font-weight:500}
+nav a{padding:.35rem .9rem;border-radius:99px;transition:background .2s}
+nav a:hover{background:var(--sun)}
+nav .cta{background:var(--ink);color:#fff}nav .cta:hover{background:var(--lavd)}
+@media(max-width:760px){nav a:not(.cta){display:none}}
+
+.hero{min-height:100svh;padding:8rem 0 3rem;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:2rem;align-items:center}
+.hi{display:inline-block;background:var(--mint);border:2px solid var(--ink);border-radius:99px;padding:.25rem 1rem;font-weight:700;font-size:.9rem;margin-bottom:1.3rem}
+h1{font-size:clamp(2.9rem,7.6vw,6.6rem);line-height:.96;font-variation-settings:'wght' 760,'wdth' 88}
+h1 mark{background:linear-gradient(transparent 62%,var(--sun) 62%);color:inherit;padding:0 .1em}
+.lede{font-size:clamp(1.08rem,1.8vw,1.28rem);color:var(--mute);max-width:32em;margin:1.6rem 0}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-flex;align-items:center;padding:.85rem 1.5rem;border-radius:99px;font-weight:700;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s,background .2s;background:#fff}
+.btn:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn.p{background:var(--lav)}
+.btn.s{background:var(--peach)}
+.stage{position:relative;min-height:420px;border:2px solid var(--ink);border-radius:2rem;background:
+radial-gradient(circle at 20% 25%,var(--rose) 0 22%,transparent 23%),radial-gradient(circle at 80% 70%,var(--sky) 0 26%,transparent 27%),#fff;overflow:hidden;touch-action:none}
+.stage small{position:absolute;left:1rem;bottom:.8rem;font-size:.8rem;color:var(--mute);font-weight:500;pointer-events:none}
+.chip{position:absolute;padding:.45rem 1rem;border:2px solid var(--ink);border-radius:99px;font:700 .95rem var(--display);cursor:grab;user-select:none;box-shadow:2px 2px 0 var(--ink);animation:drop .9s calc(var(--i)*90ms + .3s) cubic-bezier(.3,1.5,.5,1) backwards;touch-action:none}
+.chip:active{cursor:grabbing;box-shadow:5px 5px 0 var(--ink);z-index:5}
+@keyframes drop{from{transform:translateY(-420px) rotate(25deg);opacity:0}}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.stage{min-height:300px}}
+
+.tick{background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;transform:rotate(-1.2deg);margin:-.5rem -2rem 0}
+.tick div{display:inline-flex;gap:1.8rem;padding:.85rem 0;animation:slide 45s linear infinite;font:700 1.15rem var(--display)}
+.tick i{font-style:normal;color:var(--sun)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{padding:clamp(4.5rem,9vw,7.5rem) 0}
+.eb{display:inline-block;border:2px solid var(--ink);border-radius:99px;padding:.1rem .9rem;font-weight:700;font-size:.85rem;margin-bottom:1rem}
+h2{font-size:clamp(2.3rem,5.4vw,4rem);line-height:1;font-variation-settings:'wght' 760,'wdth' 90;margin-bottom:2.5rem;max-width:16ch}
+
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem}
+.pane{border:2px solid var(--ink);border-radius:1.8rem;padding:2rem}
+.pane.a{background:var(--lav)}.pane.b{background:#fff}
+.pane p{margin:0 0 1rem}.pane p:last-child{margin:0}
+.q{font:700 clamp(1.5rem,3vw,2.2rem)/1.15 var(--display);letter-spacing:-.02em}
+.facts{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.facts span{background:#fff;border:2px solid var(--ink);border-radius:99px;padding:.15rem .9rem;font-weight:500;font-size:.92rem}
+@media(max-width:760px){.intro{grid-template-columns:1fr}}
+
+.path{background:var(--sky);border-block:2px solid var(--ink)}
+.tl{list-style:none;margin:0;padding:0 0 0 2.2rem;border-left:3px dashed var(--ink);display:grid;gap:1.6rem}
+.tl li{position:relative;background:#fff;border:2px solid var(--ink);border-radius:1.4rem;padding:1.3rem 1.5rem;transition:transform .2s}
+.tl li:hover{transform:translateX(6px)}
+.tl li::before{content:"";position:absolute;left:calc(-2.2rem - 11px);top:1.6rem;width:19px;height:19px;border-radius:50%;background:var(--c);border:3px solid var(--ink)}
+.tl time{display:inline-block;background:var(--c);border:2px solid var(--ink);border-radius:99px;padding:0 .8rem;font-weight:700;font-size:.82rem;margin-bottom:.5rem}
+.tl h3{font-size:1.35rem;line-height:1.2}
+.tl p{margin:.2rem 0 0;color:var(--mute);font-size:.97rem}
+
+/* builds: bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:1.1rem}
+.tile{border:2px solid var(--ink);border-radius:1.8rem;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;box-shadow:4px 4px 0 var(--ink)}
+.tile:hover{transform:translate(-3px,-3px) rotate(-.4deg);box-shadow:8px 8px 0 var(--ink)}
+.t1{grid-column:span 4;background:var(--peach)}.t2{grid-column:span 2;background:var(--mint)}
+.t3{grid-column:span 2;background:var(--rose)}.t4{grid-column:span 4;background:var(--sun)}
+.art{border-bottom:2px solid var(--ink);background:rgba(255,255,255,.55);height:190px}
+.art svg{width:100%;height:100%;display:block}
+.tb{padding:1.3rem 1.5rem 1.5rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.tb .k{font-weight:700;font-size:.8rem}
+.tile h3{font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.05}
+.tile p{margin:0;font-size:.97rem;line-height:1.55}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}
+.tags li{background:#fff;border:2px solid var(--ink);border-radius:99px;padding:0 .7rem;font-size:.82rem;font-weight:500}
+.lk{margin-top:auto;font-weight:700;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.lk:hover{text-decoration-color:var(--lavd)}
+.soon{margin-top:auto;font-size:.85rem;font-weight:500;color:var(--mute)}
+@media(max-width:860px){.t1,.t4{grid-column:span 6}.t2,.t3{grid-column:span 3}}
+@media(max-width:600px){.t2,.t3{grid-column:span 6}}
+.pulse{animation:pl 1.6s ease-in-out infinite}
+@keyframes pl{50%{opacity:.3}}
+
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.sg{border:2px solid var(--ink);border-radius:1.6rem;padding:1.5rem;background:var(--bg-c)}
+.sg h3{font-size:1.3rem;margin-bottom:.9rem}
+.sg ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
+.sg li{background:#fff;border:2px solid var(--ink);border-radius:99px;padding:0 .8rem;font-size:.9rem;font-weight:500;transition:transform .15s}
+.sg li:hover{transform:translateY(-3px) rotate(-3deg)}
+@media(max-width:900px){.stack{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stack{grid-template-columns:1fr}}
+
+.hello{background:var(--rose);border-top:2px solid var(--ink)}
+.hello h2{font-size:clamp(2.8rem,8vw,6.5rem);max-width:12ch}
+.hello p{max-width:34em;margin:0 0 1.8rem;font-size:1.1rem}
+.addr{margin-top:2.5rem;padding-top:1.2rem;border-top:2px solid var(--ink);font-weight:500;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
+footer{background:var(--ink);color:#c9cfe6;font-size:.85rem;padding:1.3rem 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="#home">Tayeeb Tahir Buchh</a>
+<nav aria-label="Main"><a href="#hello">Hello</a><a href="#journey">Journey</a><a href="#builds">Builds</a><a href="#stack">Stack</a><a class="cta" href="#contact">Say hi</a></nav></div></header>
+
+<main>
+<div class="hero" id="home"><div class="wrap">
+  <div>
+    <span class="hi">Hi there, I’m Tayeeb 👋</span>
+    <h1>I write code and hunt for <mark>patterns</mark> in data.</h1>
+    <p class="lede">I’m an MCA student in Srinagar who enjoys building web apps and machine learning experiments. I’m now looking for my first full-time role in software or data.</p>
+    <div class="btns"><a class="btn p" href="#builds">See what I’ve built</a><a class="btn s" href="Tayeeb_Tahir_Buchh_Resume.pdf" download>Get my resume</a></div>
+  </div>
+  <div class="stage" id="stage" aria-label="Skill stickers you can drag around"><small>Go ahead, drag the stickers</small></div>
+</div></div>
+
+<div class="tick" aria-hidden="true"><div id="tick"></div></div>
+
+<section id="hello"><div class="wrap">
+  <span class="eb">Hello</span>
+  <h2>A quick look behind the screen.</h2>
+  <div class="intro">
+    <div class="pane a"><p class="q">I like it when a messy problem turns into something that simply works.</p>
+      <div class="facts"><span>📍 Srinagar, J&amp;K</span><span>🎓 MCA at IUST</span><span>💼 Open to fresher roles</span></div></div>
+    <div class="pane b">
+      <p>I studied BCA at Baba Ghulam Shah Badshah University and I’m now halfway through an MCA at the Islamic University of Science and Technology.</p>
+      <p>Most of my time goes into three things: backend logic and databases, data analysis, and training small machine learning models.</p>
+      <p>Next, I want a team where I can ship real features, learn from experienced engineers and keep getting better at the basics.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="path" id="journey"><div class="wrap">
+  <span class="eb" style="background:#fff">Journey</span>
+  <h2>Where I’ve studied and worked.</h2>
+  <ol class="tl">
+    <li style="--c:var(--mint)"><time>Sep 2025 – Feb 2026</time><h3>AI and Machine Learning Intern</h3><p>Labmentix, Bengaluru. Six months of hands-on machine learning and data work.</p></li>
+    <li style="--c:var(--lav)"><time>2025 – 2027</time><h3>Master of Computer Applications</h3><p>Islamic University of Science and Technology, Pulwama. Currently studying.</p></li>
+    <li style="--c:var(--peach)"><time>Graduated July 2025</time><h3>Bachelor of Computer Applications</h3><p>Baba Ghulam Shah Badshah University, with a CGPA of 8.67.</p></li>
+    <li style="--c:var(--sun)"><time>1 Jun – 1 Jul 2023</time><h3>Full Stack Java Intern</h3><p>Eazy Byts Infotech. A one-month internship building full stack Java applications.</p></li>
+  </ol>
+</div></section>
+
+<section id="builds"><div class="wrap">
+  <span class="eb">Builds</span>
+  <h2>Four things I’ve made.</h2>
+  <div class="bento">
+    <article class="tile t1"><div class="art"><svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Bar chart with a rising line">
+      <g stroke="#1c2340" stroke-width="2"><rect x="40" y="88" width="30" height="50" fill="#cde7ff"/><rect x="90" y="68" width="30" height="70" fill="#c8f1e0"/><rect x="140" y="78" width="30" height="60" fill="#dcd6ff"/><rect x="190" y="48" width="30" height="90" fill="#ffd9c4"/><rect x="240" y="30" width="30" height="108" fill="#ffd1e3"/></g>
+      <polyline points="55,76 105,54 155,64 205,34 255,16" fill="none" stroke="#1c2340" stroke-width="3" stroke-linejoin="round"/>
+      <g fill="#1c2340"><circle class="pulse" cx="255" cy="16" r="6"/></g></svg></div>
+      <div class="tb"><span class="k">Data project</span><h3>Finance Data Portal</h3>
+      <p>A full-stack finance manager with workspaces, budgets, savings goals and income and expense reports. Accounts in different currencies are reported separately.</p>
+      <ul class="tags"><li>React</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>MongoDB</li></ul>
+      <a class="lk" href="https://github.com/TayeebTahirBuchh/Finance-Data-Portal" target="_blank" rel="noopener noreferrer">Open the repo ↗</a></div></article>
+    <article class="tile t2"><div class="art"><svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Stack of exam papers with a stamp">
+      <g stroke="#1c2340" stroke-width="2" fill="#fff"><rect x="78" y="22" width="100" height="108" rx="5" transform="rotate(-9 128 76)"/><rect x="92" y="18" width="100" height="108" rx="5" transform="rotate(-2 142 72)"/><rect x="108" y="14" width="100" height="108" rx="5" transform="rotate(6 158 68)"/></g>
+      <g stroke="#9aa3c0" stroke-width="3" stroke-linecap="round"><path d="M128 42h50M128 56h62M128 70h38"/></g>
+      <g transform="rotate(-14 192 100)" fill="none" stroke="#c93c7b" stroke-width="3"><circle cx="192" cy="100" r="25"/><text x="192" y="105" text-anchor="middle" font-family="Arial" font-weight="700" font-size="13" fill="#c93c7b" stroke="none">PSF-8</text></g></svg></div>
+      <div class="tb"><span class="k">Web application</span><h3>Examiner Appointment System</h3>
+      <p>Handles paper assignment, submissions and PSF-8 bills for a university exam section.</p>
+      <ul class="tags"><li>PHP</li><li>MySQL</li><li>JavaScript</li><li>TCPDF</li></ul>
+      <a class="lk" href="https://github.com/TayeebTahirBuchh/Examiner-Appointment-System" target="_blank" rel="noopener noreferrer">Open the repo ↗</a></div></article>
+    <article class="tile t3"><div class="art"><svg id="v1" viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scatter of transactions with three flagged"></svg></div>
+      <div class="tb"><span class="k">Machine learning</span><h3>Credit Card Fraud Prediction</h3>
+      <p>A model that learns which card transactions look suspicious and flags them for review.</p>
+      <ul class="tags"><li>Python</li><li>Scikit-learn</li><li>Pandas</li><li>NumPy</li></ul>
+      <a class="lk" href="https://github.com/TayeebTahirBuchh/Credit-Card-Fraud-Prediction" target="_blank" rel="noopener noreferrer">Open the repo ↗</a></div></article>
+    <article class="tile t4"><div class="art"><svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Film frames with one highlighted">
+      <rect y="14" width="300" height="122" fill="#1c2340"/><g fill="#c8f1e0" id="pf"></g>
+      <rect x="22" y="40" width="70" height="70" rx="4" fill="#2f3a63"/><rect x="208" y="40" width="70" height="70" rx="4" fill="#2f3a63"/>
+      <rect x="107" y="36" width="86" height="78" rx="4" fill="#ff7aa8"/><path d="M150 56l6 13 14 2-10 10 3 14-13-7-13 7 3-14-10-10 14-2z" fill="#fff"/></svg></div>
+      <div class="tb"><span class="k">Machine learning</span><h3>Movie Prediction System</h3>
+      <p>Suggests films by learning from patterns in what people like.</p>
+      <ul class="tags"><li>Python</li><li>Scikit-learn</li><li>Matplotlib</li></ul>
+      <a class="lk" href="https://github.com/TayeebTahirBuchh/Movie-Prediction-System" target="_blank" rel="noopener noreferrer">Open the repo ↗</a></div></article>
+  </div></section>
+
+<section id="stack" style="padding-top:0"><div class="wrap">
+  <span class="eb">Stack</span>
+  <h2>What I work with.</h2>
+  <div class="stack">
+    <div class="sg" style="--bg-c:var(--mint)"><h3>Languages</h3><ul><li>Java</li><li>Python</li><li>SQL</li><li>PHP</li><li>JavaScript</li><li>TypeScript</li></ul></div>
+    <div class="sg" style="--bg-c:var(--lav)"><h3>Data and ML</h3><ul><li>Pandas</li><li>NumPy</li><li>Scikit-learn</li><li>TensorFlow</li><li>Matplotlib</li></ul></div>
+    <div class="sg" style="--bg-c:var(--peach)"><h3>Web</h3><ul><li>React</li><li>Node.js</li><li>Express</li><li>Spring Boot</li><li>Tailwind CSS</li><li>HTML</li><li>CSS</li><li>Core PHP</li></ul></div>
+    <div class="sg" style="--bg-c:var(--sky)"><h3>Databases</h3><ul><li>MySQL</li><li>MongoDB</li><li>Schema design</li><li>SQL queries</li></ul></div>
+    <div class="sg" style="--bg-c:var(--sun)"><h3>Everyday tools</h3><ul><li>Git</li><li>GitHub</li><li>VS Code</li><li>Eclipse</li><li>XAMPP</li></ul></div>
+    <div class="sg" style="--bg-c:var(--rose)"><h3>Fundamentals</h3><ul><li>Data structures</li><li>Algorithms</li><li>OOP</li><li>Software engineering</li></ul></div>
+  </div>
+</div></section>
+
+<section class="hello" id="contact"><div class="wrap">
+  <h2>Got a role or an idea? Say hi.</h2>
+  <p>I reply to every message. Email is the quickest way, and my resume is one click away if you want the short version.</p>
+  <div class="btns"><a class="btn p" href="mailto:tayeebtahirbuchh10@gmail.com">Email me</a><a class="btn s" href="Tayeeb_Tahir_Buchh_Resume.pdf" download>Download resume</a><a class="btn" href="https://www.linkedin.com/in/tayeebtahirbuchh/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="btn" href="https://github.com/TayeebTahirBuchh" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+  <div class="addr"><span>📍 Srinagar, Jammu and Kashmir, India</span><span>tayeebtahirbuchh10@gmail.com</span></div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© <span id="yr"></span> Tayeeb Tahir Buchh</span><span>Hand-built in Srinagar.</span></div></footer>
+
+<script>
+(function(){
+  var st=document.getElementById('stage'),cols=['--mint','--lav','--peach','--sun','--sky','--rose'];
+  var items=[['Java',8,10],['Python',48,6],['SQL',70,30],['Spring Boot',10,32],['Pandas',52,40],['MySQL',6,56],['Scikit-learn',40,62],['Core PHP',66,72],['Git',24,82],['Data analysis',50,86]];
+  items.forEach(function(it,i){
+    var c=document.createElement('div');c.className='chip';c.textContent=it[0];c.style.setProperty('--i',i);
+    c.style.background='var('+cols[i%6]+')';c.style.left=it[1]+'%';c.style.top=it[2]+'%';c.style.rotate=((i%5)-2)*3+'deg';
+    var ox=0,oy=0,on=false;
+    c.addEventListener('pointerdown',function(e){on=true;var r=c.getBoundingClientRect();ox=e.clientX-r.left;oy=e.clientY-r.top;c.setPointerCapture(e.pointerId);c.style.rotate='0deg'});
+    c.addEventListener('pointermove',function(e){if(!on)return;var s=st.getBoundingClientRect();
+      var x=Math.min(Math.max(e.clientX-s.left-ox,0),s.width-c.offsetWidth),y=Math.min(Math.max(e.clientY-s.top-oy,0),s.height-c.offsetHeight);
+      c.style.left=x+'px';c.style.top=y+'px'});
+    c.addEventListener('pointerup',function(){on=false});c.addEventListener('pointercancel',function(){on=false});
+    st.appendChild(c);
+  });
+  var sk=['Java','Python','Spring Boot','MySQL','Machine learning','Data analysis','React','MongoDB','Core PHP','Full stack','Scikit-learn'],h='';
+  for(var k=0;k<4;k++)sk.forEach(function(s){h+='<span>'+s+'</span><i>✦</i>'});
+  document.getElementById('tick').innerHTML=h;
+  var seed=11;function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+  var v='<line x1="0" y1="52" x2="300" y2="52" stroke="#1c2340" stroke-dasharray="5 5" opacity=".5"/>';
+  for(var i=0;i<44;i++){v+='<circle cx="'+(10+rnd()*280).toFixed(0)+'" cy="'+(66+rnd()*76).toFixed(0)+'" r="'+(2.5+rnd()*2.5).toFixed(1)+'" fill="#1c2340" opacity=".5"/>'}
+  [[64,28],[170,18],[240,38]].forEach(function(p){v+='<circle class="pulse" cx="'+p[0]+'" cy="'+p[1]+'" r="14" fill="none" stroke="#c93c7b" stroke-width="2.5"/><circle cx="'+p[0]+'" cy="'+p[1]+'" r="6" fill="#c93c7b"/>'});
+  document.getElementById('v1').innerHTML=v;
+  var pf='';for(var j=0;j<14;j++){pf+='<rect x="'+(j*22+4)+'" y="19" width="12" height="9" rx="2"/><rect x="'+(j*22+4)+'" y="122" width="12" height="9" rx="2"/>'}
+  document.getElementById('pf').innerHTML=pf;
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
